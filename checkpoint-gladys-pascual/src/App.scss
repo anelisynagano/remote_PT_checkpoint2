@@ -3,7 +3,13 @@
   outline: none;
   box-sizing: border-box;
 }
-.movie-list {
+
+h1 {
+  text-align: center;
+}
+
+.movie-list,
+.favorites {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -36,4 +42,8 @@
   .text-wrapper {
     width: 300px;
   }
+}
+
+.favorite-heading {
+  text-align: center;
 }

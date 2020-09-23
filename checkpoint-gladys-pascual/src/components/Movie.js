@@ -1,7 +1,6 @@
 import React from "react";
 
-const Movie = ({ movie }) => {
-  console.log(movie);
+const Movie = ({ movie, handleUpdateFavorite }) => {
   return (
     <div className="show-card">
       <div className="img-wrapper">
@@ -16,6 +15,12 @@ const Movie = ({ movie }) => {
           Genres: {movie.genres.map((genre) => genre).join(", ")}
         </p>
         <p className="runtime">Runtime: {movie.runtime} min </p>
+      </div>
+      <div>
+        <button onClick={() => handleUpdateFavorite(movie)}>
+          {" "}
+          Add to favorite!
+        </button>
       </div>
     </div>
   );
