@@ -1,0 +1,39 @@
+* {
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  box-sizing: border-box;
+}
+.movie-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10%;
+}
+
+.show-card {
+  margin: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid grey;
+
+  .movie-title,
+  .genres,
+  .runtime {
+    text-align: center;
+  }
+
+  .img-wrapper {
+    width: 300px;
+    img {
+      border-radius: 12px;
+      width: 100%;
+    }
+  }
+
+  .text-wrapper {
+    width: 300px;
+  }
+}

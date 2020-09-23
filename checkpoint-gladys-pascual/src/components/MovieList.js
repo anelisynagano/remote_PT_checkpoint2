@@ -1,10 +1,12 @@
 import React from "react";
 import Movie from "./Movie";
 
-const MovieList = () => {
+const MovieList = ({ movies }) => {
   return (
-    <div>
-      <Movie />
+    <div className="movie-list">
+      {movies.map((movie) => (
+        <Movie movie={movie} key={movie.id} />
+      ))}
     </div>
   );
 };
