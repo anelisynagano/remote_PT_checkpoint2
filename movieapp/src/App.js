@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import MoviesList from './components/MoviesList'; 
 
-function App() {
+const App = () => {
+
+  const [ data, setData ] = useState(null); 
+
+
+  const fetchData = () => {
+    fetch(`https://raw.githubusercontent.com/wildcodeschoolparis/datas/master/movies.json`)
+      .then(res => res.json())
+      .then(data => setData(data))
+  }
+
+  useEffect(() => {   
+    fetchData(); 
+   }, []);
+
+   console.log('data', data);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MoviesList data={data}/>
     </div>
   );
 }
