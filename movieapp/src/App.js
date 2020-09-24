@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <MoviesList data={data} changeFavorites ={changeFavorites} render={render}/>
+      {data && <MoviesList data={data} changeFavorites ={changeFavorites} render={render}/> }
     </div>
   );
 }

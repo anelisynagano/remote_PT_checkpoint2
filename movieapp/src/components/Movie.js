@@ -1,9 +1,8 @@
 import React from 'react';
 
 
-const Movie = ({ movie, changeFavorites, render  }) => {
-
-
+const Movie = ({ movie, changeFavorites }) => {
+ 
   return (
     <div className="row">
       <div className="col">{movie.title}</div>
