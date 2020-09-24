@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import DisplayMovie from './components/DisplayMovie'; 
 
 
+
 const App = () => {
 
   const [ data, setData ] = useState(null); 
@@ -22,19 +23,19 @@ const App = () => {
     fetchData(); 
    }, []);
 
-  const changeFavorites = (movie) => {
-    movie.favorite? data.movies[movie.id-1].favorite = false : data.movies[movie.id-1].favorite = true;   
+  const changeFavorites = (movie, index) => {
+    movie.favorite? data.movies[index].favorite = false : data.movies[index].favorite = true;   
     setRender(!render); 
   }
 
   return (
     <div className="App">
-      {data && <MoviesList data={data} changeFavorites ={changeFavorites} render={render}/> }
-      {/* <Switch>
-      <Route path="/movie/:id"  render={ (props) => (
+      <Switch>
+      <Route path="/movie/:id"  render={ () => 
               <DisplayMovie data={data}/>  
-        )} />
-      </Switch> */}
+      } /> 
+      <Route exact path="/" render={ () => <MoviesList data={data} changeFavorites ={changeFavorites} render={render}/> }/>
+      </Switch>
     </div>
   );
 }
