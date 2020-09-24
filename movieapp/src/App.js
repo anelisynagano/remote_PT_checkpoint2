@@ -17,6 +17,8 @@ const App = () => {
     fetchData(); 
    }, []);
 
+  const addtoFavorits = 
+
    console.log('data', data);
 
   return (

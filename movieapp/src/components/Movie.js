@@ -5,7 +5,10 @@ const Movie = ({ movie }) => {
   return (
     <div className="row">
       <div className="col">{movie.title}</div>
-      <button className="col">Add to Favorite</button>
+      <div className="col">
+        <button>Add to Favorite</button>
+        <button>Remove from Favorite</button>
+      </div>
     </div>
   );
 }
