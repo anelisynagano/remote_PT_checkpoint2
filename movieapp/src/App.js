@@ -7,6 +7,7 @@ const App = () => {
   const [ data, setData ] = useState(null); 
 
 
+
   const fetchData = () => {
     fetch(`https://raw.githubusercontent.com/wildcodeschoolparis/datas/master/movies.json`)
       .then(res => res.json())
@@ -17,13 +18,14 @@ const App = () => {
     fetchData(); 
    }, []);
 
-  const addtoFavorits = 
-
-   console.log('data', data);
+  const changeFavorites = (movie) => {
+    movie.favorite? data.movies[movie.id-1].favorite = false : data.movies[movie.id-1].favorite = true;   
+      
+  }
 
   return (
     <div className="App">
-      <MoviesList data={data}/>
+      <MoviesList data={data} changeFavorites ={changeFavorites}/>
     </div>
   );
 }
