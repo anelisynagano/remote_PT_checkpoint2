@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Movie = ({ movie, changeFavorites  }) => {
+const Movie = ({ movie, changeFavorites, render  }) => {
 
 
   return (
