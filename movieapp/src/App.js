@@ -30,11 +30,11 @@ const App = () => {
   return (
     <div className="App">
       {data && <MoviesList data={data} changeFavorites ={changeFavorites} render={render}/> }
-      <Switch>
-      <Route path="/movie/:id"  render={ () => (
+      {/* <Switch>
+      <Route path="/movie/:id"  render={ (props) => (
               <DisplayMovie data={data}/>  
         )} />
-      </Switch>
+      </Switch> */}
     </div>
   );
 }

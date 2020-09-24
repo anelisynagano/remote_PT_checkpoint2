@@ -7,9 +7,9 @@ const Movie = ({ movie, changeFavorites }) => {
       <div className="col">{movie.title}</div>
       <div className="col">
         <button onClick={()=> changeFavorites(movie)}> {movie.favorite? 'remove from Favorites': 'add to Favorite'}</button>
-        <Link to={`movie/${movie.id}`}>
+        {/* <Link to={`movie/${movie.id}`}>
         <button>Pick to display</button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
