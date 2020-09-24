@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import MoviesList from './components/MoviesList'; 
+import { Switch, Route } from 'react-router-dom';
+import DisplayMovie from './components/DisplayMovie'; 
+
 
 const App = () => {
 
@@ -27,6 +30,11 @@ const App = () => {
   return (
     <div className="App">
       {data && <MoviesList data={data} changeFavorites ={changeFavorites} render={render}/> }
+      <Switch>
+      <Route path="/movie/:id"  render={ () => (
+              <DisplayMovie data={data}/>  
+        )} />
+      </Switch>
     </div>
   );
 }
